@@ -21,7 +21,7 @@ namespace CLI
             Console.Write("> ");
             var line = Console.ReadLine();
 
-            while (line != string.Empty)
+			while (!string.IsNullOrEmpty(line))
             {
                 Symbol parse = Symbol.Parse(line);
                 Symbol evaluate = context.Process(parse);
