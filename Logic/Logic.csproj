@@ -38,6 +38,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Flow\Node.cs" />
@@ -53,7 +54,6 @@
     <Compile Include="Symbolics\Core\Hold.cs" />
     <Compile Include="Symbolics\Core\Numeric.cs" />
     <Compile Include="Symbolics\Core\Set.cs" />
-    <Compile Include="Symbolics\Evaluate.cs" />
     <Compile Include="Symbolics\Group.cs" />
     <Compile Include="Symbolics\Scope.cs" />
     <Compile Include="Symbolics\Operation.cs" />
@@ -64,11 +64,29 @@
     <Compile Include="Symbolics\Trigonometry\Sine.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="Vector3.cs" />
+    <Compile Include="Mathematics\BigDecimal.cs" />
+    <Compile Include="Mathematics\Matrix.cs" />
+    <Compile Include="Symbolics\SymbolType.cs" />
+    <Compile Include="Symbolics\Core\IsAtom.cs" />
+    <Compile Include="Symbolics\Core\TypeOf.cs" />
+    <Compile Include="Symbolics\Core\Evaluate.cs" />
+    <Compile Include="Symbolics\Core\Apply.cs" />
+    <Compile Include="Symbolics2\Symbol.cs" />
+    <Compile Include="Symbolics2\Core.cs" />
+    <Compile Include="Symbolics2\Scope.cs" />
+    <Compile Include="Symbolics2\Context.cs" />
+    <Compile Include="Symbolics2\Function.cs" />
+    <Compile Include="Symbolics2\Arithmatic.cs" />
+    <Compile Include="Symbolics2\Patterns.cs" />
+    <Compile Include="Symbolics2\Concurrency.cs" />
+    <Compile Include="Symbolics2\Networking.cs" />
+    <Compile Include="Symbolics2\Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mathematics\Graph\" />
     <Folder Include="Mathematics\Tree\" />
     <Folder Include="Parsing\" />
+    <Folder Include="Symbolics2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

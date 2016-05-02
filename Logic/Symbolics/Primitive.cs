@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 namespace Logic.Symbolics
 {
     public class Primitive<T> : Symbol
-    {
+	{
+		public override SymbolType Type {
+			get {
+				return SymbolType.Single;
+			}
+		}
         public T Value { get; private set; }
 
         public Primitive(T value)
@@ -24,5 +29,15 @@ namespace Logic.Symbolics
         {
             return new Primitive<T>(Value);
         }
+
+		public override bool Equals(object obj)
+		{
+			var primitive = obj as Primitive<T>;
+			if (primitive != null) {
+				return Value.Equals(primitive.Value);
+			}
+
+			return false;
+		}
     }
 }

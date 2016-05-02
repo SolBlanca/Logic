@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 namespace Logic.Symbolics
 {
     public abstract class Operation : Symbol
-    {
+	{
+		public override SymbolType Type {
+			get {
+				return SymbolType.Operation;
+			}
+		}
+
         public Atom Atom { get; private set; }
         public IList<string> Aliases { get; private set; }
 
@@ -32,6 +38,16 @@ namespace Logic.Symbolics
         {
             return this;
         }
+
+		public override bool Equals (object obj)
+		{
+			var operation = obj as Operation;
+			if (operation != null) {
+				return Atom.Equals( operation.Atom );
+			}
+
+			return false;
+		}
 
         public static void Evaluate(Group group, Context context)
         {

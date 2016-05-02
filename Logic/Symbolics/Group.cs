@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 namespace Logic.Symbolics
 {
     public class Group : Symbol
-    {
+	{
+		public override SymbolType Type {
+			get {
+				return SymbolType.Group;
+			}
+		}
+
         public List<Symbol> Elements { get; private set; }
 
         public Group()
@@ -100,5 +106,41 @@ namespace Logic.Symbolics
 
             return group;
         }
+
+		public override bool Equals (object obj)
+		{
+			var group = obj as Group;
+			if (group != null && group.Count == Count) {
+
+				for (int i = 0; i < Count; i++) {
+					if (!this [i].Equals( group [i] )) {
+						return false;
+					}
+				}
+
+				return true;
+			}
+
+			return false;
+		}
+
+		public override bool Matches(Symbol value)
+		{
+			var group = value as Group;
+			if (group != null && group.Count == Count) {
+
+				// if it's a match operator then go through that operator instead of group match
+
+				for (int i = 0; i < Count; i++) {
+					if (!this [i].Matches( group [i] )) {
+						return false;
+					}
+				}
+
+				return true;
+			}
+
+			return false;
+		}
     }
 }

@@ -41,8 +41,13 @@ namespace Logic.Symbolics
 
             Variables.Add("D", new Calculus.Differentiate());
 
-            Variables.Add("_", new Atom("Blank"));
-            Variables.Add("__", new Atom("BlankSequence"));
+			Variables.Add( "Match", new Patterns.Match() );
+			Variables.Add("_", new Patterns.Blank());
+			Variables.Add("__", new Patterns.BlankSequence());
+			Variables.Add("|", new Patterns.Alternatives());
+
+			Variables.Add( "TypeOf", new Core.TypeOf() );
+
         }
     }
 }

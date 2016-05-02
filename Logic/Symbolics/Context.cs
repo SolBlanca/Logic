@@ -31,7 +31,7 @@ namespace Logic.Symbolics
                 }
             }
 
-            return null;
+            return atom;
         }
 
         public void Set(Atom atom, Symbol value)

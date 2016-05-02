@@ -8,7 +8,12 @@ namespace Logic.Symbolics
 {
     public abstract class Symbol
     {
+		public abstract SymbolType Type { get; }
 
+		public virtual bool Matches (Symbol value)
+		{
+			return Equals( value );
+		}
 
         public abstract Symbol Clone();
 
