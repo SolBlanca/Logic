@@ -243,6 +243,16 @@ namespace Logic.Symbolics2
 		{
 			return "\"" + Value.ToString() + "\"";
 		}
+
+		public static implicit operator string(String value)
+		{
+			return value.Value;
+		}
+
+		public static implicit operator String(string value)
+		{
+			return new String(value);
+		}
 	}
 
 	public enum SymbolType

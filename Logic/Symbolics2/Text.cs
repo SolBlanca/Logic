@@ -16,6 +16,8 @@ namespace Logic.Symbolics2
 
 			Scope.Functions.Add( "Concatinate", new Function( Concatinate ) );
 			Scope.Functions.Add( ".", Scope.Functions ["Concatinate"] );
+			Scope.Functions.Add( "Parse", Function.FromFunction<String>( Parse ) );
+
 		}
 
 		public static Symbol Concatinate(List list, Context context)
@@ -31,6 +33,10 @@ namespace Logic.Symbolics2
 			}
 
 			return new String( value.ToString() );
+		}
+
+		public static Symbol Parse(String value, Context context) {
+			return Symbol.Parse( value );
 		}
 	}
 }

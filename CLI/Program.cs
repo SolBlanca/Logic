@@ -37,6 +37,7 @@ namespace CLI
 
 			Context context = new Context();
 			context.Scopes.Add( Core.Scope );
+			context.Scopes.Add( Module.Scope );
 			context.Scopes.Add( Arithmatic.Scope );
 			context.Scopes.Add( Patterns.Scope );
 			context.Scopes.Add( Text.Scope );

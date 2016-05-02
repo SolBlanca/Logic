@@ -81,12 +81,16 @@
     <Compile Include="Symbolics2\Concurrency.cs" />
     <Compile Include="Symbolics2\Networking.cs" />
     <Compile Include="Symbolics2\Text.cs" />
+    <Compile Include="Symbolics2\Spatial\Octree.cs" />
+    <Compile Include="Symbolics2\Module.cs" />
+    <Compile Include="Symbolics2\Sandbox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mathematics\Graph\" />
     <Folder Include="Mathematics\Tree\" />
     <Folder Include="Parsing\" />
     <Folder Include="Symbolics2\" />
+    <Folder Include="Symbolics2\Spatial\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

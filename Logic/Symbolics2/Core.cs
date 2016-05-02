@@ -16,6 +16,7 @@ namespace Logic.Symbolics2
 			// Execution
 			Scope.Functions.Add( "Evaluate", Function.FromFunction<Symbol>( Evaluate ) );
 			Scope.Functions.Add( "Apply", Function.FromFunction<Symbol, List>( Apply ) );
+			Scope.Functions.Add( "Hold", new Function( Hold ) );
 
 			// Scope
 			Scope.Functions.Add( "Set", Function.FromFunction<Atom, Symbol>( Set ) );
@@ -75,6 +76,15 @@ namespace Logic.Symbolics2
 
 			if (function != null) {
 				return function.Apply( Prepend(head, parameters) as List, context );
+			}
+
+			return List.Nothing;
+		}
+
+		public static Symbol Hold(List list, Context context)
+		{
+			if (list.Count > 1) {
+				return list [1];
 			}
 
 			return List.Nothing;
